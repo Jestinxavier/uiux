@@ -1,0 +1,580 @@
+/* styles.css */
+/* In your styles.css */
+:root {
+    --bs-primary: #F4A825;
+    /* Override Bootstrap primary */
+    --bs-secondary: #003A60;
+    /* Override Bootstrap secondary */
+    --bs-secondary-rgb: 0, 58, 96;
+    /* RGB value of your secondary color */
+
+    /* Your custom variables */
+    --primary-color: var(--bs-primary);
+    --secondary-color: var(--bs-secondary);
+    --text-dark: #2D2D2D;
+}
+
+/* Base Styles
+body {
+    font-family: 'Arial', sans-serif;
+    padding-top: 80px;
+} */
+
+@font-face {
+    font-family: 'Afterglow Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('font/afterglow-cufonfonts-webfont/Afterglow-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: "Lato Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: url('font/Lato/Lato-Regular.ttf') format('ttf');
+}
+.text-primary {
+    color: var(--bs-primary) !important;
+}
+
+.afterglow {
+    font-family: 'Afterglow Regular', sans-serif;
+}
+
+.lato {
+    font-family: 'Lato Regular', sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: var(--primary-color);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.brand-logo {
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+
+.nav-link {
+    font-family: 'Afterglow Regular';
+    font-size: 1.4rem;
+    color: white !important;
+    margin: 0 1.5rem;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+.hero-content {
+    padding-right: 3rem;
+}
+
+.main-heading {
+    font-family: 'Afterglow Regular';
+    font-size: 3.5rem;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin: 2rem 0;
+}
+
+.subheading {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+.hero-image {
+    position: relative;
+    max-width: 90%;
+    transform: rotate(3deg);
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.deco-image {
+    position: absolute;
+    width: 100%;
+    right: 0%;
+    bottom: -29%;
+    animation: float 3s ease-in-out infinite;
+    z-index: 1;
+
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(87, 201, 41, 0.15);
+    mix-blend-mode: multiply;
+    z-index: 0;
+}
+
+
+.hero-image:hover {
+    transform: rotate(0) translateY(-10px);
+}
+
+/* Buttons */
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    border: none;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #e0941f;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background: var(--secondary-color);
+    border: none;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #0a2d4d;
+    transform: translateY(-3px);
+}
+
+/* styles.css */
+.hero-section {
+    position: relative;
+    min-height: 100px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('asset/Banner/Mask\ Group\ 1@2x.png') no-repeat center center/cover;
+    z-index: -1;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    opacity: 0.9;
+    /* Adjust as needed */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(244, 168, 37, 0.1); Primary color with 10% opacity */
+    background: rgb(57 201 41 / 28%);
+    mix-blend-mode: color-burn;
+    z-index: 0;
+}
+
+.hero-section .row {
+    min-height: 80vh;
+}
+
+.image-wrapper {
+    position: relative;
+    padding: 2rem;
+}
+
+.hero-image {
+    position: absolute;
+    width: 40%;
+    right: 5%;
+    top: 20%;
+    animation: float 3s ease-in-out infinite;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.floating-leaf {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.leaf-img {
+    width: 120px;
+    animation: float 6s ease-in-out infinite;
+    transform-origin: center center;
+}
+
+
+
+/* Section styling */
+.mission-vision {
+    background: rgba(244, 168, 37, 0.05);
+    padding: 5rem 0;
+}
+
+.section-title {
+    font-family: 'Afterglow', cursive;
+    font-size: 2.8rem;
+    color: var(--secondary-color);
+    position: relative;
+    display: inline-block;
+}
+
+.lead-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+.point-item {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.point-item:hover {
+    transform: translateY(-5px);
+}
+
+.mission-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+/* Circle animation and styling */
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.green-circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    /* Use fixed size instead of percentage */
+    height: 400px;
+    /* Must match width for perfect circle */
+    background: #89ba36;
+    border-radius: 50%;
+    z-index: 0;
+    animation:
+        float 6s ease-in-out infinite,
+        scalePulse 4s ease-in-out infinite;
+}
+
+/* Add to container */
+.image-container {
+    overflow: visible;
+    /* Prevent cutting off */
+    min-height: 500px;
+    /* Ensure enough space */
+}
+
+
+.centered-image {
+    position: relative;
+    z-index: 1;
+    max-width: 70%;
+    bottom: -64px;
+    margin: 0 auto;
+    display: block;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.w-20 {
+
+    width: 50%;
+}
+
+/* Hover effect */
+.image-container:hover .centered-image {
+    transform: translateY(-10px);
+}
+
+/* Card Section Styling */
+.card-wrapper {
+    position: relative;
+    min-height: 400px;
+    margin: 4rem 0;
+}
+
+.food-card {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 2rem auto;
+    position: relative;
+    z-index: 2;
+}
+
+.food-image {
+    position: absolute;
+    width: 290px;
+    max-width: 80%;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -50px;
+    z-index: 3;
+}
+
+.card-title {
+    font-family: 'Afterglow Regular';
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+.benefits-list {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    padding-left: 1.5rem;
+}
+
+.benefits-list li {
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 35px;
+    line-height: 1.5;
+    font-weight: bold;
+}
+.btn {
+    border-radius: 10px;
+}
+
+
+
+/* Modified animations */
+@keyframes float {
+    0% {
+        transform: translate(-50%, -50%) translateY(0px);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateY(-30px);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translateY(0px);
+    }
+}
+
+@keyframes scalePulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero-section {
+        /* Uncomment if needed */
+        /* background: white; */
+        padding: 2rem 0;
+    }
+
+    .top-arrow,
+    .bottom-arrow {
+        width: 80px;
+    }
+
+    .deco-image {
+        display: none;
+    }
+
+    .hero-image {
+        position: relative;
+        max-width: 70%;
+        width: 100%;
+        margin: 6rem auto 2rem;
+    }
+
+    .main-heading {
+        font-size: 2.5rem;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
+
+    .floating-leaf {
+        display: none;
+    }
+
+    .mission-vision {
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* Tablet & Mobile Optimization */
+@media (max-width: 768px) {
+    .Organic{
+        display: none;
+    }
+    .food-image {
+        width: 300px;
+        left: -150px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .food-card {
+        margin: 2rem 0 2rem auto;
+        padding: 2.5rem;
+    }
+
+    .card-title {
+        font-size: 2.5rem;
+    }
+
+    .benefits-list {
+        font-size: 1.3rem;
+    }
+
+    .top-arrow,
+    .bottom-arrow {
+        width: 60px;
+    }
+
+    .green-circle {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .centered-image {
+        max-width: 60%;
+    }
+}
+
+/* Mobile-first responsive behavior */
+@media (max-width: 576px) {
+    .point-item {
+        padding: 1rem;
+    }
+
+    .point-image {
+        max-width: 80px;
+    }
+}
+
+/* Large Screens (Hover Effect) */
+@media (min-width: 1200px) {
+    .point-item:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease-in-out;
+    }
+}
